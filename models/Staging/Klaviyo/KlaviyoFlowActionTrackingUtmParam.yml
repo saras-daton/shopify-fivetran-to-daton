@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: KlaviyoFlowActionTrackingUtmParam
+    description: "Staging model for Klaviyo Flow Action Tracking UTM Parameters data"
+    config:
+      materialized: incremental
+      unique_key: flow_action_id
+      incremental_strategy: merge
+    
+    columns:
+      - name: flow_action_id
+        description: "ID of the flow action"
+        tests:
+          - unique
+          - not_null
+      
+      - name: name
+        description: "Name of the UTM parameter"
+        tests:
+          - not_null
+      
+      - name: value
+        description: "Value of the UTM parameter"
+        tests:
+          - not_null 

@@ -1,0 +1,61 @@
+name: "edm_data_transformation"
+version: "1.0.0"
+config-version: 2
+require-dbt-version: [">=1.0.0", "<2.0.0"]
+profile: "edm_data_transformation"
+
+vars:
+  raw_database: "solutionsdw"
+  raw_schema: "edm_test"
+  default_ddl_schema: ""
+  shared_schema: "pulse_shared_prod"
+  mdl_database: "{{ target.project }}"
+  mdl_schema: "{{ target.dataset }}_prerequisites"
+  prerequisite_mdl_schema: "{{ target.dataset }}_prerequisites"
+  audit_database: "{{ target.project }}"
+  audit_schema: "edm_insights_metadata"
+  client_id: "0000" # Client ID for the project, it will be different for each client project
+
+
+  # Klaviyo model variables
+  KlaviyoEvents: true
+  KlaviyoFlowActions: true
+  KlaviyoFlowMessages: true
+  KlaviyoFlowActionTrackingUtmParam: true
+  KlaviyoCampaignTrackingUtmParam: true
+  KlaviyoPerson: true
+  KlaviyoSegments: true
+  KlaviyoCampaignList: true
+  KlaviyoMetric: true
+  KlaviyoFlows: true
+  KlaviyoCampaigns: true
+  KlaviyoCampaignMessages : true
+  KlaviyoCampaignMessageSendTime: true
+
+
+
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+docs-paths: ["docs"]
+
+target-path: "target" # directory which will store compiled SQL files
+clean-targets: # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+models:
+  edm_data_transformation:
+    Staging:
+      +schema: staging
+
+

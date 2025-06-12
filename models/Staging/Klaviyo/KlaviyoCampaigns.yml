@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  - name: KlaviyoCampaigns
+    description: "Staging model for Klaviyo Campaigns data"
+    config:
+      materialized: incremental
+      unique_key: id
+      incremental_strategy: merge
+    
+    columns:
+      - name: id
+        description: "Unique identifier for the campaign"
+        tests:
+          - unique
+          - not_null
+      
+      - name: name
+        description: "Name of the campaign"
+        tests:
+          - not_null
+      
+      - name: created
+        description: "Timestamp when the campaign was created"
+        tests:
+          - not_null
+      
+      - name: updated
+        description: "Timestamp when the campaign was last updated"
+        tests:
+          - not_null
+      
+      - name: status
+        description: "Status of the campaign"
+        tests:
+          - not_null
+      
+      - name: archived
+        description: "Whether the campaign is archived"
+        tests:
+          - not_null
+      
+      - name: scheduled
+        description: "Timestamp when the campaign is scheduled to be sent"
+      
+      - name: send_time
+        description: "Timestamp when the campaign was sent"
+      
+      - name: send_strategy_method
+        description: "Method used for sending the campaign"
+        tests:
+          - not_null
+      
+      - name: send_option_ignore_unsubscribes
+        description: "Whether to ignore unsubscribes when sending"
+      
+      - name: send_option_use_smart_sending
+        description: "Whether to use smart sending"
+        tests:
+          - not_null
+      
+      - name: tracking_options_is_add_utm
+        description: "Whether to add UTM parameters"
+        tests:
+          - not_null
+      
+      - name: tracking_options_is_tracking_clicks
+        description: "Whether to track clicks"
+      
+      - name: tracking_options_is_tracking_opens
+        description: "Whether to track opens"

@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: KlaviyoFlowActions
+    description: "Staging model for Klaviyo Flow Actions data"
+    config:
+      materialized: incremental
+      unique_key: id
+      incremental_strategy: merge
+    
+    columns:
+      - name: id
+        description: "Unique identifier for the flow action"
+        tests:
+          - unique
+          - not_null
+      
+      - name: flow_id
+        description: "ID of the flow associated with the action"
+        tests:
+          - not_null
+      
+      - name: action_type
+        description: "Type of the flow action"
+        tests:
+          - not_null
+      
+      - name: created
+        description: "Timestamp when the flow action was created"
+        tests:
+          - not_null
+      
+      - name: status
+        description: "Status of the flow action"
+        tests:
+          - not_null
+      
+      - name: updated
+        description: "Timestamp when the flow action was last updated"
+        tests:
+          - not_null
+      
+      - name: render_options_add_info_link
+        description: "Whether to add info link in render options"
+        tests:
+          - not_null
+      
+      - name: render_options_add_opt_out_language
+        description: "Whether to add opt-out language in render options"
+        tests:
+          - not_null
+      
+      - name: render_options_add_org_prefix
+        description: "Whether to add organization prefix in render options"
+        tests:
+          - not_null
+      
+      - name: render_options_shorten_links
+        description: "Whether to shorten links in render options"
+        tests:
+          - not_null
+      
+      - name: send_option_is_transactional
+        description: "Whether the send option is transactional"
+        tests:
+          - not_null
+      
+      - name: send_option_use_smart_sending
+        description: "Whether to use smart sending in send options"
+        tests:
+          - not_null
+      
+      - name: tracking_options_is_add_utm
+        description: "Whether to add UTM parameters in tracking options"
+        tests:
+          - not_null
+      
+      - name: tracking_options_is_tracking_clicks
+        description: "Whether to track clicks in tracking options"
+        tests:
+          - not_null
+      
+      - name: tracking_options_is_tracking_opens
+        description: "Whether to track opens in tracking options"
+        tests:
+          - not_null 
