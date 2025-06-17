@@ -5,17 +5,11 @@ require-dbt-version: [">=1.0.0", "<2.0.0"]
 profile: "edm_data_transformation"
 
 vars:
-  raw_database: "solutionsdw"
-  raw_schema: "edm_test"
-  default_ddl_schema: ""
-  shared_schema: "pulse_shared_prod"
-  mdl_database: "{{ target.project }}"
-  mdl_schema: "{{ target.dataset }}_prerequisites"
-  prerequisite_mdl_schema: "{{ target.dataset }}_prerequisites"
-  audit_database: "{{ target.project }}"
-  audit_schema: "edm_insights_metadata"
-  client_id: "0000" # Client ID for the project, it will be different for each client project
-
+  raw_database: "solutionsdw" #equivalent to project_id in BigQuery
+    # Example Database name
+  raw_schema:  "edm_test" #equivalent to dataset in BigQuery
+    # Example Schema name
+  
 
   # Klaviyo model variables
   KlaviyoEvents: true
