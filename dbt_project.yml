@@ -7,9 +7,12 @@ profile: "edm_data_transformation"
 vars:
   raw_database: "solutionsdw" #equivalent to project_id in BigQuery
     # Example Database name
-  raw_schema:  "edm_test" #equivalent to dataset in BigQuery
+  raw_schema:  "zenul_test" #equivalent to dataset in BigQuery
     # Example Schema name
-  
+  SHOPIFYV2: true 
+  timezone_conversion_flag: true
+  to_timezone: "America/Los_Angeles"
+
 
   # Klaviyo model variables
   KlaviyoEvents: true
@@ -25,6 +28,8 @@ vars:
   KlaviyoCampaigns: true
   KlaviyoCampaignMessages : true
   KlaviyoCampaignMessageSendTime: true
+
+
 
 
 

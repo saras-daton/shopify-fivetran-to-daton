@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: SHOPIFY_FULFILLMENT_EVENT
+    description: "Staging model for Shopify fulfillment events"
+    config:
+      materialized: incremental
+
+    columns:
+      - name: id
+        description: "Unique identifier for the fulfillment event"
+
+      - name: fulfillment_id
+        description: "Associated fulfillment ID"
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - id

@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: SHOPIFY_INVENTORY_ITEM
+    description: "Staging model for Shopify inventory items"
+    config:
+      materialized: incremental
+
+    columns:
+      - name: id
+        description: "Unique identifier for the inventory item"
+        tests:
+          - not_null
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - id

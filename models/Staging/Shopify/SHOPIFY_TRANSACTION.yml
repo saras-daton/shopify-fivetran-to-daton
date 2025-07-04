@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: sSHOPIFY_TRANSACTION
+    description: "Staging model for Shopify transactions"
+    config:
+      materialized: incremental
+
+    columns:
+      - name: id
+        description: "Unique identifier for the transaction"
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - id

@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: SHOPIFY_ORDER_LINE_REFUND
+    description: "Staging model for Shopify order line refunds"
+    config:
+      materialized: incremental
+
+    columns:
+      - name: refund_id
+        description: "Unique identifier for the refunded order line"
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - refund_id
