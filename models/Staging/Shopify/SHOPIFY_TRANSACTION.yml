@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: sSHOPIFY_TRANSACTION
+  - name: SHOPIFY_TRANSACTION
     description: "Staging model for Shopify transactions"
     config:
       materialized: incremental
