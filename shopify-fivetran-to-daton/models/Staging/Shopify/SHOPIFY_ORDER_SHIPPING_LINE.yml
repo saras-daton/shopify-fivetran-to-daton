@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: SHOPIFY_ORDER_SHIPPING_LINE
+    description: "Staging model for Shopify order shipping lines"
+    config:
+      materialized: incremental
+
+    columns:
+      - name: order_shipping_line_id
+        description: "Unique identifier for the shipping line in an order"
+        tests:
+          - not_null
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - order_shipping_line_id

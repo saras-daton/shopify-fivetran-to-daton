@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: KlaviyoCampaignMessageSendTime
+    description: "Staging model for Klaviyo Campaign Messages data"
+    config:
+      materialized: incremental
+      unique_key: campaign_message_id
+      incremental_strategy: merge
+      on_schema_change: sync_all_columns
+    
+    columns:
+      - name: campaign_message_id
+        description: "Unique identifier for the campaign message"
+        tests:
+          - unique
+          - not_null
+
+      - name: datetime
+        description: "Timestamp when the campaign message was sent"
+        tests:
+          - not_null
+      
