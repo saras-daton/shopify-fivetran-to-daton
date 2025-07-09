@@ -939,7 +939,7 @@ The tests property defines assertions about a column, table, or view. The proper
 
 ## Prerequisites for Fivetran to Daton dbt Package
 
-- [Daton integration for Klaviyo](https://www.sarasanalytics.com/daton/klaviyo)
+- [Daton integration for Shopify](https://www.sarasanalytics.com/daton/shopify)
 
 ### Required Raw Tables for Klaviyo Models in Daton Integration
 
