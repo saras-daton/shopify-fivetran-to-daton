@@ -14,20 +14,20 @@ vars:
   to_timezone: "America/Los_Angeles"
 
 
-  # Klaviyo model variables
-  KlaviyoEvents: true
-  KlaviyoFlowActions: true
-  KlaviyoFlowMessages: true
-  KlaviyoFlowActionTrackingUtmParam: true
-  KlaviyoCampaignTrackingUtmParam: true
-  KlaviyoPerson: true
-  KlaviyoSegments: true
-  KlaviyoCampaignList: true
-  KlaviyoMetric: true
-  KlaviyoFlows: true
-  KlaviyoCampaigns: true
-  KlaviyoCampaignMessages : true
-  KlaviyoCampaignMessageSendTime: true
+  ShopifyCustomers: true
+  ShopifyOrders: true
+  ShopifyDiscountCodes: true
+  ShopifyFulfillments: true
+  ShopifyFulfillmentOrders: true
+  ShopifyGiftCards: true
+  ShopifyInventoryItems: true
+  ShopifyInventoryLevels: true
+  ShopifyMetafields: true
+  ShopifyRefunds: true
+  ShopifyPriceRules: true
+  ShopifyProducts: true
+  ShopifyShop: true
+  ShopifyTransactions: true
 
 
 
