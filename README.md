@@ -994,7 +994,6 @@ The tests property defines assertions about a column, table, or view. The proper
 ### Required Variables
 
 This dbt package assumes that you have an existing dbt project with a BigQuery profile connected and tested.
-
 Set the following in your `dbt_project.yml` file:
 
 ```yaml
